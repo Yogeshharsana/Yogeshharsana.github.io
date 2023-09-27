@@ -384,6 +384,7 @@ background-clip: text;
 }
 .footer-social ul li a img{
   width: 100%;
+  
 }
 .footer-social ul li a img:hover{
   transform: scale(1.2);
