@@ -31,19 +31,19 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link "  href="#">Home</a>
+                <a class="nav-link "  href="#hero">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#about">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Skills</a>
+                <a class="nav-link" href="#skills">Skills</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Projects</a>
+                <a class="nav-link" href="#projects">Projects</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="#contact">Contact</a>
               </li>
             </ul>
           </div>
@@ -53,7 +53,7 @@
     <main>
       <!-- section hero start -->
       <section>
-        <div class="hero">
+        <div class="hero" id="hero">
           <div class="hero-text">
             <h2>
               Hi 👋🏻, I am <span class="name"><h2>Yogesh Harsana</h2></span>
@@ -78,7 +78,7 @@
       <!-- section hero ends -->
       
       <!-- education sections starts -->
-      <section>
+      <section id="about">
         <div class="edu-container">
             <div class="about">
                 <h1>About Me</h1>
@@ -177,7 +177,7 @@
       </section>
 
       <!-- skills section starts here -->
-      <section>
+      <section id="skills">
         <div class="skills">
             <h1>Skills</h1>
             <h5> Technologies I’ve been working with recently </h5>
@@ -206,7 +206,7 @@
       <!-- skills section ends here -->
 
       <!-- Project section starts here -->
-      <div class="project-container">
+      <div class="project-container" id="projects">
         <div class="project-heading">
             <h1>Projects</h1>
             
@@ -279,7 +279,7 @@
 
 
       <!-- contact section starts here -->
-      <section>
+      <section id="contact">
             <div class="contact">
                 <h1>Contact</h1>
             </div>
@@ -354,5 +354,23 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+              e.preventDefault();
+  
+              const targetId = this.getAttribute('href').substring(1);
+              const targetElement = document.getElementById(targetId);
+  
+              if (targetElement) {
+                  window.scrollTo({
+                      top: targetElement.offsetTop,
+                      behavior: 'smooth'
+                  });
+              }
+          });
+      });
+  </script>
+  
   </body>
 </html>
